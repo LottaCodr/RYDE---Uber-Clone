@@ -1,7 +1,15 @@
-import { View, Text } from 'react-native'
+import { View, Text, Image } from 'react-native'
 import React from 'react'
+import CustomButton from './CustomButton'
+import { icons } from '@/constants'
+
+
 
 const OAuth = () => {
+    const handleGoogleSignIn = async () => {
+        console.log('Nothing is happening')
+      }
+      
     return (
         <View>
             <View className='flex flex-row justify-center items-center mt-4 gap-x-3'>
@@ -10,6 +18,19 @@ const OAuth = () => {
                 <View className='flex-1 h-[1px] bg-general-100' />
 
             </View>
+            <CustomButton title='Log In with Google' 
+            IconLeft={()=> (
+                <Image
+                source={icons.google}
+                resizeMode="contain"
+                className='w-5 h-5 mx-2'
+                />
+            )}
+            bgVariant='outline'
+            textVariant='primary'
+            onPressIn={handleGoogleSignIn}
+            />
+
 
         </View>
     )
